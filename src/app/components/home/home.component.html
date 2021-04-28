@@ -1,0 +1,28 @@
+<div class="container">
+  <header>
+    <h1 class="text-center">Vas Cinema</h1>
+  </header>
+  <hr />
+  <div class="body d-flex justify-content-center">
+    <ul class="d-flex">
+      <li (click)="getShowTime('ilupeju')">Ilupeju</li>
+      <li (click)="getShowTime('VI')">VI</li>
+      <li (click)="getShowTime('lekki')">Lekki</li>
+    </ul>
+  </div>
+  <div>
+      <div class="row">
+          <div class="col col-sm-12 col-lg-6" *ngIf="location">
+            <h4 class="text-uppercase">{{location}}</h4>
+            <h1>Movies</h1>
+            <div *ngFor="let movie of Movies">
+                <p>{{ movie.title}} <span>{{movie.time}}</span></p> 
+                <!-- <p *ngFor= "let time of Movie.time"></p> -->
+            </div>
+          </div>
+          <!-- <div class="col col-sm-12 col-lg-6" le>    
+              <h6>Time:</h6>
+          </div> -->
+      </div>
+  </div>
+</div>
