@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vas-angular": {
+    "vas-cinemas": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vas-angular",
+            "outputPath": "dist/vas-cinemas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "vas-angular:build"
+            "browserTarget": "vas-cinemas:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "vas-angular:build:production"
+              "browserTarget": "vas-cinemas:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vas-angular:build"
+            "browserTarget": "vas-cinemas:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "vas-angular:serve"
+            "devServerTarget": "vas-cinemas:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "vas-angular:serve:production"
+              "devServerTarget": "vas-cinemas:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "vas-angular"
+  "defaultProject": "vas-cinemas"
 }

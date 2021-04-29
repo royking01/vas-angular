@@ -1,0 +1,65 @@
+// $primary-color:#252525;
+// $secondary-color:#F0C219;
+// $alternate-color:#a09c9c;
+// $main-color:white;
+// $font-stack:'normal, normal bold';
+
+
+// header, footer {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
+//   padding: 30px 50px;
+//   box-sizing: border-box;
+//   height: 75px;
+//   line-height: 75px;
+//   background-color: transparent;
+
+//   a{ 
+//     text-decoration: none;
+//     color: $main-color; 
+//   }:first-child{
+//       color: $main-color;
+//   }
+//   #fade{
+//       color: #1301b3;
+//   }
+//   ul {
+//     margin: 0;
+//     display: flex;
+//     align-items: center;
+//     list-style: none;
+//     li {
+//       margin: 0 20px;
+//       a {
+//         padding: 10px 20px;
+//         border: none;
+//         border-radius: 5%;
+//         // background-color: grey;
+//       }:hover{
+//           color: $alternate-color;
+//           border-bottom: 2.5px solid $secondary-color;
+//       }:active{
+//           color: $secondary-color;
+//       }
+//     }
+//   }
+// }
+// header{
+//     background-image:url('https://firebasestorage.googleapis.com/v0/b/filmhouseweb-403f1.appspot.com/o/cinemas%2Flekki%2FDEMI0590.jpg?alt=media&token=e9cfe886-3680-4e49-93fa-aacb1b9ad6f4'),linear-gradient(#eb01a5, #d13531);
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     height: 450px;
+//     box-sizing: border-box;
+//     background: linear-gradient(#3c21d3, #ffffff);
+// }
+// // .main{
+   
+// // }
+// footer{
+//     position: absolute;
+//     bottom: 0px;
+//     display: none;
+// }
+

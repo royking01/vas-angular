@@ -3,15 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from "@angular/forms";
-
+import { CinemasComponent } from './components/cinemas/cinemas.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    HomeComponent
+    CinemasComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
