@@ -1,28 +1,121 @@
-<!-- <div class="container">
-  <h1>CINEMAS</h1>
-  <ul>
-    <li *ngFor="let cinema of cinemas">
-      <button
-        (click)="getLocationShowingTime(cinema.location)"
-        class="btn btn-primary"
-      >
-        {{ cinema.location }}
-      </button>
-    </li>
-  </ul>
-
-</div> -->
 <div class="body">
   <div class="navbar">
-    <li class="logo"><span id="man">VAS</span>- <span id="alt">Cinema</span></li>
-    <a routerLink="/log-in" class="signin">Sign In</a>
+    <li class="logo">
+      <span id="man"
+        >
+      <h1 *ngIf="!buttonDisplay"> 
+        Vas-Cinema
+      </h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="100"
+          height="100"
+          viewBox="0 0 172 172"
+          style="fill: #000000"
+          (click)="closeShows()"
+          *ngIf="buttonDisplay" >
+          <g transform="">
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g id="original-icon" fill="#e50914">
+                <path
+                  d="M68.585,44.6125c-1.80062,0.06719 -3.49375,0.84656 -4.73,2.15l-33.97,34.4l-4.73,4.8375l4.73,4.8375l33.97,34.4c2.67406,2.72781 7.05469,2.78156 9.7825,0.1075c2.72781,-2.67406 2.78156,-7.05469 0.1075,-9.7825l-22.4675,-22.6825h86.3225c2.48594,0.04031 4.78375,-1.26312 6.03344,-3.41312c1.26313,-2.13656 1.26313,-4.79719 0,-6.93375c-1.24969,-2.15 -3.5475,-3.45344 -6.03344,-3.41313h-86.3225l22.4675,-22.6825c2.06938,-2.00219 2.6875,-5.06594 1.53188,-7.71312c-1.15563,-2.63375 -3.81625,-4.27313 -6.69188,-4.11188z"
+                ></path>
+              </g>
+              <path d="" fill="none"></path>
+              <path d="" fill="none"></path>
+              <path d="" fill="none"></path>
+            </g>
+          </g></svg>
+        </span>
+    </li>
+    <a routerLink="/add-movie" class="signin">Sign In</a>
   </div>
   <div class="main">
     <div class="area">
-      <h1>Unlimited movies, TV <br />shows, and more.</h1>
+      <h1 *ngIf="!buttonDisplay">
+        Unlimited movies, TV <br />shows, and more.
+      </h1>
+      <!-- <h1
+        (click)="closeShows()"
+        style="border: 1px solid red; padding: 5px; cursor: pointer"
+        *ngIf="buttonDisplay"
+      >
+        {{ buttonDisplay ? "Go back" : "" }}
+      </h1> -->
       <div class="actions">
-        <p class="search"> View Shows</p>
-        <p class="search"> Cinemas</p>
+        <p
+          type="button"
+          class="search button"
+          href="#popup1"
+          (click)="getMovies()"
+          *ngIf="!buttonDisplay"
+        >
+          View Shows
+        </p>
+        <div class="row" *ngIf="viewShows">
+          <div class="row__inner">
+            <div class="tile" *ngFor="let movie of movies">
+              <div class="tile__media">
+                <img
+                  class="tile__img"
+                  src="https://source.unsplash.com/1600x900/?{{ movie.title }}"
+                  alt=""
+                />
+              </div>
+              <div class="tile__details">
+                <div class="tile__title">
+                  {{ movie.title }}
+                  <p style="text-align: left; color: grey">{{ movie.genre }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="Cinemas">
+          <div class="row__inner">
+            <div class="tile" *ngFor="let cinema of cinemas">
+              <div class="tile__media">
+                <img
+                  class="tile__img"
+                  src="https://source.unsplash.com/1600x900/?{{
+                    cinema.location
+                  }}"
+                  alt=""
+                />
+              </div>
+              <div class="tile__details">
+                <div class="tile__title">
+                  {{ cinema.name }}
+                  <p style="text-align: left; color: grey">
+                    {{ cinema.location }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="search" *ngIf="!buttonDisplay" (click)="getCinemas()">
+          Where we are
+        </p>
       </div>
     </div>
   </div>
@@ -31,7 +124,7 @@
     <div class="footercon">
       <div class="flex1">
         <h5>Questions? <a href="tel:+8155386242"> 08155386242</a></h5>
-        <h5> Vas Cinema</h5>
+        <h5>Vas Cinema</h5>
       </div>
     </div>
   </div>

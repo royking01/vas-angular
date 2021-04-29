@@ -4,7 +4,7 @@
   </div>
   <div class="main">
     <div class="area">
-      <div class="showcase-content">
+      <div class="showcase-content" *ngIf="!loggedIn">
         <div class="formm">
           <form>
             <h1>Sign In</h1>
@@ -12,17 +12,23 @@
               <input
                 class="email"
                 type="email"
+                name="email"
                 placeholder="Email or phone number"
-              />
+              [(ngModel)]="email"/>
               <br />
-              <input class="email" type="password" placeholder="Password" />
+              <input class="email" 
+              name="password"
+              type="password" 
+              placeholder="Password"
+              [(ngModel)]="password"
+               />
             </div>
             <div class="btn">
-              <button class="btn-primary" type="submit">Sign In</button>
+              <button class="btn-primary" [class.validate]="validating" type="submit" (click)="signIn($event)">{{ validating ? 'Logging in!!' : 'Sign In' }}</button>
             </div>
             <div class="help">
               <div>
-                <input value="true" type="checkbox" /><label>Remember me</label>
+                <input value="true" type="checkbox" (change)="rememberUser($event)" /><label>Remember me</label>
               </div>
 
               <a routerLink="/cinemas">Need Help ?</a>
@@ -34,6 +40,37 @@
             Only Authenticated Admin users are allowed to access and update movie data. 
           </p>
         </div>
+      </div>
+      <div class="showcase-content" *ngIf="addMovie">
+        <div class="formm">
+          <form>
+            <h1>Add Movie</h1>
+            <div class="info">
+              <input
+                class="email"
+                type="text"
+                placeholder="Movie Title"
+              />
+              <br />
+              <input class="email" type="text" placeholder="Genre" />
+            </div>
+            <div class="btn">
+              <button class="btn-primary" type="submit">Add Movie</button>
+            </div>
+            <div class="help">
+              <!-- <div>
+                <input value="true" type="checkbox" /><label>Remember me</label>
+              </div> -->
+
+              <a routerLink="/cinemas">Need Help ?</a>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="more">
+          <p>
+            Only Authenticated Admin users are allowed to access and update movie data. 
+          </p>
+        </div> -->
       </div>
     </div>
   </div>

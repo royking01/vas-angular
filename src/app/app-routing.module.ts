@@ -15,7 +15,7 @@ const routes: Routes = [
     component: CinemasComponent,
   },
   {
-    path: 'log-in',
+    path: 'add-movie',
     component: LogInComponent,
   },
   {

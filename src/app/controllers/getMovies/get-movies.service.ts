@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import { movies } from '../../Data/Movies';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GetMoviesService {
-
-  constructor() { }
+  // GET EACH MOVIE FROM THE DATBASE AND THIER RESPECTIVE DATA
+  constructor() {}
+  getMovies(): Observable<any> {
+    return of(movies);
+  }
 }

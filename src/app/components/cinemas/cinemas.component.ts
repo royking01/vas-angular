@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { cinemas } from 'src/app/Data/Cinemas';
+import { GetMoviesService } from '../../controllers/getMovies/get-movies.service';
+import { GetCinemasService } from '../../controllers/getCinemas/get-cinemas.service';
 
 @Component({
   selector: 'app-cinemas',
@@ -8,13 +9,39 @@ import { cinemas } from 'src/app/Data/Cinemas';
 })
 export class CinemasComponent implements OnInit {
   cinemas = [];
+  Cinemas: boolean = false;
+  viewShows: boolean = false;
+  buttonDisplay: boolean = false;
 
-  constructor() {}
+  movies = [];
+  constructor(
+    public getMovieService: GetMoviesService,
+    public getCinemasService: GetCinemasService
+  ) {}
 
-  ngOnInit(): void {
-    this.getCinemas();
-  }
+  ngOnInit(): void {}
   getCinemas() {
-    this.cinemas = cinemas;
+    this.getCinemasService.getCinemas().subscribe((cinemas) => {
+      this.cinemas = cinemas;
+    });
+    this.Cinemas = true;
+    this.buttonDisplay = true;
+  }
+  viewData() {
+    this.viewShows = true;
+    this.buttonDisplay = true;
+    this.Cinemas = false;
+  }
+  closeShows() {
+    this.viewShows = false;
+    this.buttonDisplay = false;
+    this.Cinemas = false;
+  }
+  getMovies() {
+    this.viewShows = true;
+    this.buttonDisplay = true;
+    this.getMovieService.getMovies().subscribe((movies) => {
+      this.movies = movies;
+    });
   }
 }
