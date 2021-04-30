@@ -12,7 +12,7 @@
       <div class="top">
         <h1>MOVIES</h1>
         <ul>
-          <li>Monday</li>
+          <li>Monday</li> 
           <li>Tuesday</li>
           <li>Wednesday</li>
           <li>Thursday</li>
@@ -26,6 +26,10 @@
         <li>
           {{ n.title }}
         </li>
+      </ul>
+
+      <ul *ngFor="let n of week">
+        <!-- <li style="color: red; font-size: 30px;">{{d[0].showing[0].Monday}}</li> -->
       </ul>
     </div>
   </div>

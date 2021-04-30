@@ -192,7 +192,7 @@ $font-stack: "normal, normal bold";
     background-color: $secondary-color;
     text-align: center;
   }
-  .search:hover {
+  &:hover {
     cursor: pointer;
   }
 }

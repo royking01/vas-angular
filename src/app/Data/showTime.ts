@@ -7,7 +7,7 @@ export const showTime = [
       id: 1,
       name: 'Vas Lekki',
       location: 'Lekki',
-      // Movies: [movies],
+      Movies: [movies],
       showtime: [
         {
           title: movies[0].title,
