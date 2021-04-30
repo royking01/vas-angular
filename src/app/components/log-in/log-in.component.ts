@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetUsersService } from '../../controllers/getUsers/get-users.service';
 import { GetMoviesService } from '../../controllers/getMovies/get-movies.service';
-import { Movie } from "../../Models/Movies";
+import { Movie } from '../../Models/Movies';
+import { movies } from 'src/app/Data/Movies';
 
 @Component({
   selector: 'app-log-in',
@@ -16,9 +17,14 @@ export class LogInComponent implements OnInit {
   password: string;
   Users = [];
   rememberuser;
-  Movie:object
-  constructor(private getUsersService: GetUsersService,
-      public getMovieService: GetMoviesService,) {
+  genre: string;
+  title: string;
+  duration: string;
+  Movie: Movie;
+  constructor(
+    private getUsersService: GetUsersService,
+    public getMovieService: GetMoviesService
+  ) {
     const name = localStorage.getItem('user');
     if (name) {
       this.loggedIn = true;
@@ -67,11 +73,23 @@ export class LogInComponent implements OnInit {
     this.rememberuser = e.target.checked;
   }
 
-  addMovies(){
-    this.getMovieService.getMovies()
-    .subscribe((movie)=>{
-      movie
-      // movie.append(this.Movie:Movie)
-    })
+  addMovies(e) {
+    e.preventDefault();
+
+    this.getMovieService.getMovies().subscribe((movie) => {
+      this.Movie = {
+        id: movie.length + 1,
+        title: this.title,
+        genre: this.genre,
+        duration: this.duration,
+      };
+      movie.push(this.Movie);
+      localStorage.setItem('shows', JSON.stringify(movie));
+    });
+  }
+  logOut(){
+    this.loggedIn = false;
+    this.addMovie = false;
+    localStorage.removeItem('user')
   }
 }

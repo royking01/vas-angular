@@ -1,0 +1,195 @@
+
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Martel+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+$primary-color: hsl(0, 0%, 15%);
+$secondary-color: #e50914;
+$alternate-color: #a09c9c;
+$main-color: white;
+$font-stack: "normal, normal bold";
+
+.body {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(8, 8, 8, 0.89);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  min-height: 75px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 25px;
+  a {
+    text-decoration: none;
+    color: $main-color;
+    margin-right: 10px;
+  }
+  li {
+    margin: 0 50px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  li:nth-child(2) {
+    margin-top: -10px;
+    margin-right: 70px;
+  }
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: $secondary-color;
+  text-transform: uppercase;
+  h1 {
+    font-size: inherit;
+  }
+}
+
+.main {
+  color: $main-color;
+  // margin: auto;
+  width: 100%;
+  margin-top: -100px;
+  background-size: cover;
+  align-items: flex-start;
+  overflow-x: hidden;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  min-height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/a1dc92ca-091d-4ca9-a05b-8cd44bbfce6a/f9368347-e982-4856-a5a4-396796381f28/RS-en-20191230-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+  .content {
+    width: 90%;
+    margin: auto;
+
+    .top {
+      display: flex;
+      align-items: center;
+
+      ul {
+        display: flex;
+        li {
+          margin: 20px;
+          color: gray;
+          font-size: 20px;
+          font-weight: 500;
+        }
+        li:first-child {
+          margin-left: 50px;
+        }
+      }
+    }
+    ul {
+      li {
+        color: wheat;
+        list-style: none;
+        margin: 10px;
+      }
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  .footercon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    // min-height: 50px;
+    background-color: transparent;
+    .flex1 {
+      color: $alternate-color;
+      justify-content: space-around;
+    //   align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      font-size: 17px;
+    //   min-height: 30px;
+      h5 {
+        align-self: flex-start;
+        margin-left: -30px;
+        padding: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 980px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+      .navbar {
+        display: flex;
+        /* flex-direction: column; */
+        background-color: black;
+        align-items: center;
+        padding: 10px;
+        min-height: 100px;
+        margin-bottom: 30px;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+          margin: 0;
+        }
+      }
+  }
+  .main {
+    margin-top: 0;
+    .content {
+      overflow: scroll;
+    }
+  }
+  .navbar li {
+    margin: 0px 25px;
+    font-size: 31px;
+  }
+
+  .footer {
+    max-height: 75px;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    .footercon {
+      height: 0;
+      align-items: center;
+    }
+  }
+  .flex1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

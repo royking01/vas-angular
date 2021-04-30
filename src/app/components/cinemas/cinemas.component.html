@@ -1,11 +1,8 @@
 <div class="body">
   <div class="navbar">
     <li class="logo">
-      <span id="man"
-        >
-      <h1 *ngIf="!buttonDisplay"> 
-        Vas-Cinema
-      </h1>
+      <span id="man">
+        <h1 *ngIf="!buttonDisplay" routerLink="/cinemas">Vas-Cinema</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -15,7 +12,8 @@
           viewBox="0 0 172 172"
           style="fill: #000000"
           (click)="closeShows()"
-          *ngIf="buttonDisplay" >
+          *ngIf="buttonDisplay"
+        >
           <g transform="">
             <g
               fill="none"
@@ -43,8 +41,9 @@
               <path d="" fill="none"></path>
               <path d="" fill="none"></path>
             </g>
-          </g></svg>
-        </span>
+          </g>
+        </svg>
+      </span>
     </li>
     <a routerLink="/add-movie" class="signin">Sign In</a>
   </div>
@@ -53,13 +52,6 @@
       <h1 *ngIf="!buttonDisplay">
         Unlimited movies, TV <br />shows, and more.
       </h1>
-      <!-- <h1
-        (click)="closeShows()"
-        style="border: 1px solid red; padding: 5px; cursor: pointer"
-        *ngIf="buttonDisplay"
-      >
-        {{ buttonDisplay ? "Go back" : "" }}
-      </h1> -->
       <div class="actions">
         <p
           type="button"
@@ -92,23 +84,25 @@
         <div class="row" *ngIf="Cinemas">
           <div class="row__inner">
             <div class="tile" *ngFor="let cinema of cinemas">
-              <div class="tile__media">
-                <img
-                  class="tile__img"
-                  src="https://source.unsplash.com/1600x900/?{{
-                    cinema.location
-                  }}"
-                  alt=""
-                />
-              </div>
-              <div class="tile__details">
-                <div class="tile__title">
-                  {{ cinema.name }}
-                  <p style="text-align: left; color: grey">
-                    {{ cinema.location }}
-                  </p>
+              <a routerLink="/cinemas/{{ cinema.id }}">
+                <div class="tile__media">
+                  <img
+                    class="tile__img"
+                    src="https://source.unsplash.com/1600x900/?{{
+                      cinema.location
+                    }}"
+                    alt=""
+                  />
                 </div>
-              </div>
+                <div class="tile__details">
+                  <div class="tile__title">
+                    {{ cinema.name }}
+                    <p style="text-align: left; color: grey">
+                      {{ cinema.location }}
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -127,9 +121,5 @@
         <h5>Vas Cinema</h5>
       </div>
     </div>
-  </div>
-  <div class="end">
-    <h2></h2>
-    <h2></h2>
   </div>
 </div>

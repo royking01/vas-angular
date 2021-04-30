@@ -40,8 +40,14 @@ export class CinemasComponent implements OnInit {
   getMovies() {
     this.viewShows = true;
     this.buttonDisplay = true;
-    this.getMovieService.getMovies().subscribe((movies) => {
-      this.movies = movies;
-    });
+    const show = localStorage.getItem('shows');
+    if (!show) {
+      this.getMovieService.getMovies().subscribe((movies) => {
+        this.movies = movies;
+        localStorage.setItem('shows', JSON.stringify(movies));
+      });
+    } else {
+      this.movies = JSON.parse(show);
+    }
   }
 }

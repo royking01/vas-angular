@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getCinemas();
     this.getMovies();
-    this.getShowingTime();
   }
   getCinemas() {
     this.cinemas = cinemas;
@@ -28,23 +27,7 @@ export class AppComponent implements OnInit {
   getMovies() {
     this.movies = movies;
   }
-  getShowingTime() {
-    // console.log(showTime);
-    this.showTime = showTime;
-  }
-  async getLocationShowingTime(id) {
-    this.locationTime = [];
-    // GET LOCATION AND ITS DATA 
-    const data = showTime.filter((val) => {
-      return val.Cinema.location == id;
-    });
-    const dt = data[0];
-    this.locationTime.push(dt);
-    this.location = this.locationTime[0].Cinema.location;
-    // console.log(this.locationTime[0].Cinema.location);
-    // console.log(this.locationTime[0].Cinema.Movies)
-    await this.getMovieTime();
-  }
+
   getMovieTime() {
     //  console.log(this.locationTime[0].Movie)
     const time = this.locationTime[0].Cinema.showtime

@@ -4,11 +4,10 @@ import { movies } from './Movies';
 
 export const showTime = [
   {
-    Cinema: {
       id: 1,
       name: 'Vas Lekki',
       location: 'Lekki',
-      Movies: [movies],
+      // Movies: [movies],
       showtime: [
         {
           title: movies[0].title,
@@ -23,7 +22,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[1],
+          title: movies[1].title,
           showing: [
             { Monday: ['12:10PM', '3:15PM', '7:45PM'] },
             { Tuesday: ['9:55AM', '2:45PM', '6:30PM'] },
@@ -35,7 +34,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[2],
+          title: movies[2].title,
           showing: [
             { Monday: ['11:04AM', '3:45PM', '8:00PM'] },
             { Tuesday: ['11:04AM', '3:45PM', '8:00PM'] },
@@ -47,7 +46,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[3],
+          title: movies[3].title,
           showing: [
             { Monday: ['8:55AM', '1:05PM', '6:30PM'] },
             { Tuesday: ['10:04AM', '3:05PM', '7:10PM'] },
@@ -59,17 +58,16 @@ export const showTime = [
           ],
         },
       ],
-    },
   },
   {
-    Cinema: {
+    
       id: 2,
       name: 'Vas Ajah',
       location: 'Ajah',
       Movies: [movies],
       showtime: [
         {
-          title: movies[0],
+          title: movies[0].title,
           showing: [
             { Monday: ['11:04AM', '3:45PM', '8:00PM'] },
             { Tuesday: ['11:04AM', '3:45PM', '8:00PM'] },
@@ -81,7 +79,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[1],
+          title: movies[1].title,
           showing: [
             { Monday: ['12:00PM', '3:15PM', '7:45PM'] },
             { Tuesday: ['9:55AM', '2:45PM', '6:30PM'] },
@@ -93,7 +91,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[2],
+          title: movies[2].title,
           showing: [
             { Monday: ['12:00PM', '3:15PM', '7:45PM'] },
             { Tuesday: ['9:55AM', '2:45PM', '6:30PM'] },
@@ -105,7 +103,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[3],
+          title: movies[3].title,
           showing: [
             { Monday: ['11:04AM', '3:45PM', '8:00PM'] },
             { Tuesday: ['11:04AM', '3:45PM', '8:00PM'] },
@@ -117,7 +115,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[3],
+          title: movies[3].title,
           showing: [
             { Monday: ['11:04AM', '3:45PM', '8:00PM'] },
             { Tuesday: ['11:04AM', '3:45PM', '8:00PM'] },
@@ -129,17 +127,17 @@ export const showTime = [
           ],
         },
       ],
-    },
+  
   },
   {
-    Cinema: {
+    
       id: 3,
       name: 'Vas Gbagada',
       location: 'Gbagada',
       Movies: [movies],
       showtime: [
         {
-          title: movies[0],
+          title: movies[0].title,
           showing: [
             { Monday: ['11:04AM', '2:45PM', '8:00PM'] },
             { Tuesday: ['11:04AM', '3:45PM', '8:00PM'] },
@@ -151,7 +149,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[1],
+          title: movies[1].title,
           showing: [
             { Monday: ['11:00AM', '4:15PM', '8:45PM'] },
             { Tuesday: ['10:55AM', '2:45PM', '6:30PM'] },
@@ -163,7 +161,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[2],
+          title: movies[2].title,
           showing: [
             { Monday: ['10:00AM', '3:25PM', '7:15PM'] },
             { Tuesday: ['11:55AM', '1:10PM', '5:30PM'] },
@@ -175,7 +173,7 @@ export const showTime = [
           ],
         },
         {
-          title: movies[3],
+          title: movies[3].title,
           showing: [
             { Monday: ['11:04AM', '3:45PM', '8:05PM'] },
             { Tuesday: ['11:25AM', '3:10PM', '8:00PM'] },
@@ -188,5 +186,4 @@ export const showTime = [
         },
       ],
     },
-  },
 ];

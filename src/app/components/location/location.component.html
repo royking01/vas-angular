@@ -1,0 +1,40 @@
+<div class="body">
+  <div class="navbar">
+    <li class="logo">
+      <span id="man">
+        <h1 routerLink="/cinemas">{{ location }}</h1>
+      </span>
+    </li>
+    <a routerLink="/log-in" class="signin"> SIGN IN</a>
+  </div>
+  <div class="main">
+    <div class="content">
+      <div class="top">
+        <h1>MOVIES</h1>
+        <ul>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wednesday</li>
+          <li>Thursday</li>
+          <li>Friday</li>
+          <li>Saturday</li>
+          <li>Sunday</li>
+        </ul>
+      </div>
+      <br />
+      <ul *ngFor="let n of title">
+        <li>
+          {{ n.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footercon">
+      <div class="flex1">
+        <h5>Questions? <a href="tel:+8155386242"> 08155386242</a></h5>
+        <h5>Vas Cinema</h5>
+      </div>
+    </div>
+  </div>
+</div>

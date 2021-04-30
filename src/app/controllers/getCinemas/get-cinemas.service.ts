@@ -11,4 +11,10 @@ export class GetCinemasService {
   getCinemas(): Observable<any> {
     return of(cinemas);
   }
+
+
+  //GET LOCATION AND DATA FOR A SINGLE CINEMA
+  getCinema(id): Observable<any> {
+    return of(cinemas.find((cinema) => cinema.id == id));
+  }
 }
