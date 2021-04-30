@@ -34,11 +34,21 @@ export class LogInComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  validateEmail(email: string) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
   signIn(e) {
     e.preventDefault();
     this.validating = !this.validating;
     if (this.email != null && this.password !== null) {
       try {
+        const mailformat =
+          "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/";
+        if (!this.validateEmail(this.email.toLowerCase())) {
+          alert('invalid email');
+          return;
+        }
         this.getUsersService.getUsers().subscribe(async (users) => {
           this.Users = users;
           const userData = await users.find((user) => {
@@ -87,9 +97,9 @@ export class LogInComponent implements OnInit {
       localStorage.setItem('shows', JSON.stringify(movie));
     });
   }
-  logOut(){
+  logOut() {
     this.loggedIn = false;
     this.addMovie = false;
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
   }
 }
