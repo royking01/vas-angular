@@ -5,14 +5,14 @@
         <h1 routerLink="/cinemas">{{ location }}</h1>
       </span>
     </li>
-    <a routerLink="/log-in" class="signin"> SIGN IN</a>
+    <a routerLink="/add-movie" class="signin"> SIGN IN</a>
   </div>
   <div class="main">
     <div class="content">
       <div class="top">
         <h1>MOVIES</h1>
         <ul>
-          <li>Monday</li> 
+          <li>Monday</li>
           <li>Tuesday</li>
           <li>Wednesday</li>
           <li>Thursday</li>
@@ -27,10 +27,31 @@
           {{ n.title }}
         </li>
       </ul>
+      <br />
+      <div class="weeks">
+        <ul *ngFor="let mon of monday; index as i">
+          <li>{{ n[0] }}</li>
+        </ul>
+        <ul *ngFor="let n of tuesday">
+          <li>{{ n[0] }}</li>
+        </ul>
 
-      <ul *ngFor="let n of week">
-        <!-- <li style="color: red; font-size: 30px;">{{d[0].showing[0].Monday}}</li> -->
-      </ul>
+        <ul *ngFor="let n of wednesday">
+          <li>{{ n[0] }}</li>
+        </ul>
+        <ul *ngFor="let n of thursday">
+          <li>{{ n[0] }}</li>
+        </ul>
+        <ul *ngFor="let n of friday">
+          <li>{{ n[0] }}</li>
+        </ul>
+        <ul *ngFor="let n of saturday">
+          <li>{{ n[0] }}</li>
+        </ul>
+        <ul *ngFor="let n of sunday">
+          <li>{{ n[0] }}</li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="footer">

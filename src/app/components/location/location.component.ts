@@ -15,6 +15,13 @@ export class LocationComponent implements OnInit {
   title = [];
   week = [];
   Movies = [];
+  monday = ['kjhg','89','kjhg',0]
+  tuesday = []
+  wednesday = []
+  thursday = []
+  friday = []
+  saturday = []
+  sunday = []
   constructor(
     public getCinemasService: GetCinemasService,
     public route: ActivatedRoute,
@@ -33,7 +40,6 @@ export class LocationComponent implements OnInit {
         return _movie.title;
       });
       this.Movies = movi;
-      console.log('Movies', movi);
     });
   }
   getLocation() {
@@ -49,30 +55,42 @@ export class LocationComponent implements OnInit {
       this.data.push(_data);
 
       //FIRST LAYER
-      // console.log('FIRST LAYER', _data);
+      console.log('FIRST LAYER ID', _data);
 
       const time = _data.showtime;
       const u = time.filter((val) => {
         return val;
       });
-
       //SECOND LAYER
-      // console.log('Second LAyer', u);
-
+      console.log('SECOND LAYER SHOW TIME', u);
       const d = u.filter((val) => {
-        return val.showing;
-      });
-      console.log('show', d);
-      this.week = d;
-      // THIS IS AN ARRAY OF SHOWING TIMES FOR THE FIRST DAY OF THE FIRST MOVIE
-      console.log('showing 1 Monday ', d[0].showing[0].Monday);
+        const data = [];
+        const i = val.showing.filter((d) => {
+          return d;
+        });
+        let flat = [].concat.apply([], i) 
+        // let flattened = [].concat.apply([], this.rows)
+        data.push(flat)
+          this.monday = flat[0].Monday
+         const t = this.monday.map((t)=>{
+          //  console.log("ttt", t)
+            return t
+          })
 
-      const e = d.forEach((d) => {
-        return d.showing;
+          console.log('t',t[0])
+          this.tuesday = flat[1].Tuesday[0]
+          this.wednesday = flat[2].Wednesday[0]
+          this.thursday = flat[3].Thursday[0]
+          this.friday = flat[4].Friday[0]
+          this.saturday = flat[5].Saturday[0]
+          this.sunday = flat[6].Sunday[0]
+          console.log(this.monday)
+        // console.log('data',flat[6].Sunday[0]);
+
+        return data;
       });
-      const de = [];
-      de.push(e[0].showing[0]);
-      console.log('eee', de);
+      // THIS IS AN ARRAY OF SHOWING TIMES FOR THE FIRST DAY OF THE FIRST MOVIE
+      console.log('HARD CODED INDEX ', d[0].showing[0].Monday);
 
       this.title = u;
       for (const [key, value] of Object.entries(u)) {
@@ -81,7 +99,6 @@ export class LocationComponent implements OnInit {
       const gh = u.filter((item) => {
         return item.showing;
       });
-      // console.log(gh[1].showing[1][0]);
     });
   }
 }
